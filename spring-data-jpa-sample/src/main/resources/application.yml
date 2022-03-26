@@ -1,0 +1,28 @@
+spring:
+  output:
+    ansi:
+      enabled: DETECT
+
+  profiles:
+    active: h2
+    #active: mysql
+
+  datasource:
+    p6spy:
+      enable: true
+      quick: false
+      customize:
+        url-keys: spring.datasource.url
+        driver-class-name-keys: spring.datasource.driverClassName,spring.datasource.driver-class-name
+
+
+logging:
+  level:
+    root: info
+
+
+server:
+  tomcat.uri-encoding: UTF-8
+  port: 8281
+  connectionTimeout: 8000
+
